@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Volumeer</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+
+      <section class="tabs-section" aria-label="Open tabs">
+        <div id="tab-list" class="tab-list" aria-label="Choose a tab"></div>
+      </section>
+
+      <section class="meter" aria-label="Selected tab volume control">
+        <div class="value-row">
+          <span class="eyebrow">TAB VOLUME</span>
+          <output id="volume-value" for="volume">100%</output>
+        </div>
+
+        <input id="volume" type="range" min="0" max="500" step="5" value="100" aria-label="Tab volume percentage">
+      </section>
+
+      <div class="presets" aria-label="Volume presets">
+        <button type="button" data-gain="100">100%</button>
+        <button type="button" data-gain="200">200%</button>
+        <button type="button" data-gain="300">300%</button>
+        <button type="button" data-gain="500">500%</button>
+      </div>
+
+      <div id="notice" class="notice" role="status" aria-live="polite">
+        Each tab keeps its own volume.
+      </div>
+
+      <button id="enable-tab" class="reset primary" type="button" hidden>Enable boost for this tab</button>
+      <div class="actions">
+        <button id="go-to-tab" class="reset" type="button" disabled>Go to tab</button>
+        <button id="reset" class="reset" type="button">Reset</button>
+      </div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
