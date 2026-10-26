@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14141e" />
+      <stop offset="100%" stop-color="#0e0e14" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b7cf8" />
+      <stop offset="100%" stop-color="#6c5ce7" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b894" />
+      <stop offset="100%" stop-color="#00cec9" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdcb6e" />
+      <stop offset="100%" stop-color="#e17055" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .txt-main { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+    .node-title { font-weight: 700; font-size: 13px; fill: #ffffff; }
+    .node-sub { font-weight: 400; font-size: 11px; fill: #9a98aa; line-height: 1.4; }
+    .badge { font-weight: 700; font-size: 10px; }
+  </style>
+
+  <rect width="840" height="260" rx="14" fill="url(#pipeBg)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2" />
+
+  <!-- Pipeline Tier 1 -->
+  <g transform="translate(30, 30)">
+    <rect width="235" height="200" rx="12" fill="#1b1a26" stroke="rgba(139, 124, 248, 0.3)" stroke-width="1.2" />
+    <circle cx="34" cy="34" r="16" fill="url(#purpleGrad)" />
+    <path d="M30 27 L30 41 L41 34 Z" fill="#ffffff" />
+    <text x="60" y="34" class="txt-main node-title">1. Direct In-Page</text>
+    <text x="60" y="48" class="txt-main badge" fill="#b9afff">HTML5 Media Elements</text>
+    
+    <text x="20" y="86" class="txt-main node-sub">Injected directly into page context.</text>
+    <text x="20" y="104" class="txt-main node-sub">Connects `<audio>` &amp; `<video>` to</text>
+    <text x="20" y="122" class="txt-main node-sub">Web Audio GainNodes instantly.</text>
+
+    <rect x="20" y="148" width="195" height="34" rx="6" fill="#13131b" />
+    <text x="117" y="170" text-anchor="middle" class="txt-main badge" fill="#77e2a4">✓ Zero tab switching needed</text>
+  </g>
+
+  <!-- Pipeline Tier 2 -->
+  <g transform="translate(302, 30)">
+    <rect width="235" height="200" rx="12" fill="#1b1a26" stroke="rgba(0, 206, 201, 0.3)" stroke-width="1.2" />
+    <circle cx="34" cy="34" r="16" fill="url(#greenGrad)" />
+    <path d="M28 34 A6 6 0 1 1 40 34 A6 6 0 1 1 28 34 M34 26 L34 34 L38 38" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+    <text x="60" y="34" class="txt-main node-title">2. Early CORS Setup</text>
+    <text x="60" y="48" class="txt-main badge" fill="#81ecec">Detached / Dynamic Players</text>
+
+    <text x="20" y="86" class="txt-main node-sub">Registers a site-specific script</text>
+    <text x="20" y="104" class="txt-main node-sub">at `document_start` before player</text>
+    <text x="20" y="122" class="txt-main node-sub">inits (e.g. SoundCloud, Bandcamp).</text>
+
+    <rect x="20" y="148" width="195" height="34" rx="6" fill="#13131b" />
+    <text x="117" y="170" text-anchor="middle" class="txt-main badge" fill="#81ecec">✓ Permanent per-site memory</text>
+  </g>
+
+  <!-- Pipeline Tier 3 -->
+  <g transform="translate(574, 30)">
+    <rect width="235" height="200" rx="12" fill="#1b1a26" stroke="rgba(253, 203, 110, 0.3)" stroke-width="1.2" />
+    <circle cx="34" cy="34" r="16" fill="url(#orangeGrad)" />
+    <path d="M28 38 L40 38 M34 26 L34 35 M27 30 L34 23 L41 30" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+    <text x="60" y="34" class="txt-main node-title">3. Tab Capture</text>
+    <text x="60" y="48" class="txt-main badge" fill="#ffeaa7">Synthesizers &amp; Canvas Games</text>
+
+    <text x="20" y="86" class="txt-main node-sub">Streams audio to an offscreen</text>
+    <text x="20" y="104" class="txt-main node-sub">document via `chrome.tabCapture`</text>
+    <text x="20" y="122" class="txt-main node-sub">when no DOM element exists.</text>
+
+    <rect x="20" y="148" width="195" height="34" rx="6" fill="#13131b" />
+    <text x="117" y="170" text-anchor="middle" class="txt-main badge" fill="#ffeaa7">✓ 100% audio compatibility</text>
+  </g>
+</svg>

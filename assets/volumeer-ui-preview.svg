@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#241e45" />
+      <stop offset="100%" stop-color="#0b0b10" />
+    </radialGradient>
+    <radialGradient id="popupTopGlow" cx="85%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="rgba(108, 92, 231, 0.35)" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <linearGradient id="sliderFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7" />
+      <stop offset="100%" stop-color="#a29bfe" />
+    </linearGradient>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.12)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.03)" />
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-ui { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif; }
+    .title { font-weight: 700; fill: #f7f6fb; }
+    .subtitle { font-weight: 400; fill: #9997aa; }
+    .badge-text { font-weight: 600; font-size: 11px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="840" height="520" rx="16" fill="url(#bgGlow)" />
+  <rect width="840" height="520" rx="16" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5" />
+
+  <!-- Ambient light circles -->
+  <circle cx="210" cy="180" r="160" fill="#6c5ce7" opacity="0.08" filter="url(#glow)" />
+  <circle cx="630" cy="340" r="180" fill="#8b7cf8" opacity="0.07" filter="url(#glow)" />
+
+  <!-- Feature Callout Left -->
+  <g transform="translate(48, 140)">
+    <rect width="180" height="72" rx="10" fill="#15151e" stroke="rgba(255, 255, 255, 0.08)" />
+    <circle cx="28" cy="28" r="14" fill="rgba(108, 92, 231, 0.2)" />
+    <path d="M24 23 L32 28 L24 33 Z" fill="#8b7cf8" />
+    <text x="50" y="32" class="font-ui title" font-size="13">Multi-Tab List</text>
+    <text x="16" y="56" class="font-ui subtitle" font-size="11">Detects playing &amp; muted audio</text>
+  </g>
+
+  <g transform="translate(48, 260)">
+    <rect width="180" height="72" rx="10" fill="#15151e" stroke="rgba(255, 255, 255, 0.08)" />
+    <circle cx="28" cy="28" r="14" fill="rgba(119, 226, 164, 0.15)" />
+    <circle cx="28" cy="28" r="6" fill="#77e2a4" />
+    <text x="50" y="32" class="font-ui title" font-size="13">Smart CORS</text>
+    <text x="16" y="56" class="font-ui subtitle" font-size="11">Pre-registers detached media</text>
+  </g>
+
+  <!-- Feature Callout Right -->
+  <g transform="translate(612, 140)">
+    <rect width="180" height="72" rx="10" fill="#15151e" stroke="rgba(255, 255, 255, 0.08)" />
+    <circle cx="28" cy="28" r="14" fill="rgba(139, 124, 248, 0.2)" />
+    <text x="28" y="33" text-anchor="middle" class="font-ui title" font-size="13" fill="#b9afff">5x</text>
+    <text x="50" y="32" class="font-ui title" font-size="13">0% to 500% Gain</text>
+    <text x="16" y="56" class="font-ui subtitle" font-size="11">Instant live slider control</text>
+  </g>
+
+  <g transform="translate(612, 260)">
+    <rect width="180" height="72" rx="10" fill="#15151e" stroke="rgba(255, 255, 255, 0.08)" />
+    <circle cx="28" cy="28" r="14" fill="rgba(240, 147, 43, 0.18)" />
+    <path d="M23 28 L28 23 L33 28 M28 24 L28 33" stroke="#f0932b" stroke-width="2" stroke-linecap="round" fill="none" />
+    <text x="50" y="32" class="font-ui title" font-size="13">Web Audio</text>
+    <text x="16" y="56" class="font-ui subtitle" font-size="11">Tab capture fallback support</text>
+  </g>
+
+  <!-- Main Extension Popup Container (Centered) -->
+  <g transform="translate(260, 25)" filter="url(#subtleShadow)">
+    <!-- Popup Body -->
+    <rect width="320" height="470" rx="16" fill="#111117" />
+    <rect width="320" height="470" rx="16" fill="url(#popupTopGlow)" />
+    <rect width="320" height="470" rx="16" fill="none" stroke="url(#cardBorder)" stroke-width="1.2" />
+
+    <!-- Tabs List Header -->
+    <g transform="translate(16, 16)">
+      <!-- Tab Group 1: YouTube -->
+      <g transform="translate(0, 0)">
+        <rect width="288" height="22" rx="4" fill="#131319" />
+        <rect x="2" y="2" width="18" height="18" rx="4" fill="#ff0000" opacity="0.85" />
+        <polygon points="9,7 9,15 15,11" fill="#ffffff" />
+        <text x="26" y="15" class="font-ui" font-size="11" font-weight="650" fill="#9997aa">youtube.com</text>
+        <text x="280" y="15" text-anchor="end" class="font-ui" font-size="10" font-weight="700" fill="#b9afff">1 boosted</text>
+      </g>
+
+      <!-- Tab Row 1 (Selected): Lo-Fi Beats -->
+      <g transform="translate(8, 28)">
+        <rect width="280" height="34" rx="7" fill="rgba(139, 124, 248, 0.14)" stroke="#8b7cf8" stroke-width="1.2" />
+        <text x="10" y="21" class="font-ui" font-size="11.5" font-weight="600" fill="#ece9ff">Lofi Hip Hop Radio — 24/7</text>
+        <!-- Playing Pill -->
+        <rect x="180" y="8" width="46" height="18" rx="9" fill="rgba(119, 226, 164, 0.18)" />
+        <text x="203" y="20" text-anchor="middle" class="font-ui" font-size="8.5" font-weight="700" fill="#8fe7b7">PLAYING</text>
+        <!-- Boost Pill -->
+        <rect x="232" y="8" width="38" height="18" rx="9" fill="rgba(139, 124, 248, 0.25)" />
+        <text x="251" y="20" text-anchor="middle" class="font-ui" font-size="9" font-weight="700" fill="#b9afff">250%</text>
+      </g>
+
+      <!-- Tab Row 2: Ambient Mix -->
+      <g transform="translate(8, 66)">
+        <rect width="280" height="30" rx="6" fill="#1a1a24" />
+        <text x="10" y="19" class="font-ui" font-size="11" font-weight="400" fill="#a4a2b3">Synthwave Study Playlist</text>
+        <rect x="232" y="6" width="38" height="18" rx="9" fill="rgba(255, 255, 255, 0.05)" />
+        <text x="251" y="18" text-anchor="middle" class="font-ui" font-size="9" font-weight="600" fill="#6f6d7d">100%</text>
+      </g>
+
+      <!-- Tab Group 2: SoundCloud -->
+      <g transform="translate(0, 104)">
+        <rect width="288" height="22" rx="4" fill="#131319" />
+        <rect x="2" y="2" width="18" height="18" rx="4" fill="#ff5500" opacity="0.9" />
+        <circle cx="11" cy="11" r="5" fill="#ffffff" />
+        <text x="26" y="15" class="font-ui" font-size="11" font-weight="650" fill="#9997aa">soundcloud.com</text>
+      </g>
+
+      <g transform="translate(8, 130)">
+        <rect width="280" height="30" rx="6" fill="#1a1a24" />
+        <text x="10" y="19" class="font-ui" font-size="11" font-weight="400" fill="#a4a2b3">Electronic Mix 2026 Session</text>
+        <rect x="238" y="6" width="32" height="18" rx="9" fill="rgba(255, 255, 255, 0.05)" />
+        <path d="M250 11 L254 11 L257 8 L257 22 L254 19 L250 19 Z" fill="#8e8ca0" />
+      </g>
+    </g>
+
+    <!-- Gain Meter Section -->
+    <g transform="translate(16, 192)">
+      <rect width="288" height="96" rx="14" fill="rgba(29, 29, 40, 0.88)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="1" />
+      <text x="14" y="26" class="font-ui" font-size="9.5" font-weight="700" letter-spacing="1.5" fill="#9997aa">TAB VOLUME</text>
+      <text x="274" y="32" text-anchor="end" class="font-ui" font-size="26" font-weight="800" fill="#ffffff" letter-spacing="-0.5">250%</text>
+
+      <!-- Slider Track -->
+      <g transform="translate(14, 52)">
+        <rect width="260" height="10" rx="5" fill="#343341" />
+        <!-- Filled Track (250/500 = 50% = 130px) -->
+        <rect width="130" height="10" rx="5" fill="url(#sliderFill)" />
+        <!-- Thumb -->
+        <circle cx="130" cy="5" r="9" fill="#ffffff" filter="url(#glow)" />
+        <circle cx="130" cy="5" r="6" fill="#8b7cf8" />
+      </g>
+
+      <text x="14" y="82" class="font-ui" font-size="9.5" fill="#7d7b8d">0%</text>
+      <text x="75" y="82" class="font-ui" font-size="9.5" fill="#7d7b8d">100%</text>
+      <text x="140" y="82" class="font-ui" font-size="9.5" fill="#7d7b8d">250%</text>
+      <text x="268" y="82" text-anchor="end" class="font-ui" font-size="9.5" fill="#7d7b8d">500%</text>
+    </g>
+
+    <!-- Presets Section -->
+    <g transform="translate(16, 304)">
+      <g transform="translate(0, 0)">
+        <rect width="66" height="30" rx="7" fill="#1f1e2b" stroke="rgba(255,255,255,0.06)" />
+        <text x="33" y="19" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#c7c5d3">100%</text>
+      </g>
+      <g transform="translate(74, 0)">
+        <rect width="66" height="30" rx="7" fill="#1f1e2b" stroke="rgba(255,255,255,0.06)" />
+        <text x="33" y="19" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#c7c5d3">200%</text>
+      </g>
+      <g transform="translate(148, 0)">
+        <rect width="66" height="30" rx="7" fill="rgba(139, 124, 248, 0.2)" stroke="#8b7cf8" stroke-width="1.2" />
+        <text x="33" y="19" text-anchor="middle" class="font-ui" font-size="11" font-weight="700" fill="#b9afff">300%</text>
+      </g>
+      <g transform="translate(222, 0)">
+        <rect width="66" height="30" rx="7" fill="#1f1e2b" stroke="rgba(255,255,255,0.06)" />
+        <text x="33" y="19" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#c7c5d3">500%</text>
+      </g>
+    </g>
+
+    <!-- Notice -->
+    <text x="160" y="366" text-anchor="middle" class="font-ui" font-size="10.5" font-weight="450" fill="#888698">Each tab keeps its own volume independently.</text>
+
+    <!-- Action Buttons -->
+    <g transform="translate(16, 396)">
+      <rect width="138" height="34" rx="8" fill="#1c1b26" stroke="rgba(255, 255, 255, 0.07)" />
+      <text x="69" y="21" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#b5b3c4">Go to tab</text>
+
+      <g transform="translate(150, 0)">
+        <rect width="138" height="34" rx="8" fill="#1c1b26" stroke="rgba(255, 255, 255, 0.07)" />
+        <text x="69" y="21" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#b5b3c4">Reset this tab</text>
+      </g>
+    </g>
+
+    <!-- Footer Tag -->
+    <text x="160" y="452" text-anchor="middle" class="font-ui" font-size="9" fill="#585666">Volumeer v1.1.0 • Manifest V3</text>
+  </g>
+</svg>
