@@ -256,6 +256,20 @@ Volumeer is styled with a sleek, distraction-free aesthetic tailored for modern 
 
 ---
 
+## 📦 How to Release
+
+1. Update `"version"` in `manifest.json` and commit your changes.
+2. Create and push a version tag:
+   ```bash
+   git tag v1.0.0 && git push --tags
+   ```
+3. GitHub Actions (`.github/workflows/build-installers.yml`) automatically runs the test suite, packages the Chromium/Brave extension as `volumeer-<version>-chromium-all.zip`, and publishes a GitHub Release.
+4. **Where to download:**
+   - **Tagged releases:** Go to the repository's **Releases** page and download `volumeer-<version>-chromium-all.zip`.
+   - **Manual builds:** Trigger **Build Installers** from the **Actions** tab and download the `installers` workflow artifact.
+
+---
+
 ## 📜 License
 
 Distributed under the **MIT License**. Free for personal and commercial use.
